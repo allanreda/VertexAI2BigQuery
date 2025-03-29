@@ -16,13 +16,11 @@ In this repository, you will find my version of how to use this technology and t
 - [Technologies](#technologies)
 
 ## Project Diagram
-![vertex2bigquery drawio](https://github.com/user-attachments/assets/f99c6ce4-f68b-47b7-86e8-2959ccb61310)
+![image](https://github.com/user-attachments/assets/9c80940c-2e88-4556-90e8-a06135a3bf40)
 
 ## Conversation Examples
-![image](https://github.com/user-attachments/assets/c5d50195-7466-41ba-89e3-8f40b84f4e95) ![image](https://github.com/user-attachments/assets/545a2962-072c-4428-ab14-e2e02ac955a1) ![image](https://github.com/user-attachments/assets/7b750f13-9354-4796-84dc-82b9e77901e9) ![image](https://github.com/user-attachments/assets/e4813dce-9ce6-43b5-af56-fd5a4835125c)
-
-
-
+![image](https://github.com/user-attachments/assets/cd04ac50-f588-4e0b-bc85-ad6334078d60)![image](https://github.com/user-attachments/assets/abed1966-787c-4b7d-a54d-5a0e7d0dadee)
+![image](https://github.com/user-attachments/assets/652a1a1f-3aa6-40ab-868f-c5d4f8d5b13f)![image](https://github.com/user-attachments/assets/7532f383-89bd-4a24-8ad7-dcb090e9d146)
 
 ## Vertex AI Agent Setup
 This agent consists of four main parts: OpenApi tool, Cloud Run Function, playbook instructions and playbook examples.
@@ -163,23 +161,23 @@ For optimal performance, the agent should also be provided with some examples of
 Here are the examples I provided for this project:  
 
 #### Example 1
-![image](https://github.com/user-attachments/assets/180d79c2-5ff9-4f8d-b4aa-3c397394be02)
+![image](https://github.com/user-attachments/assets/b8477f2b-f7d8-4936-8f69-560d71c50e84)
 #### Example 2
-![image](https://github.com/user-attachments/assets/0d59feb7-ddcb-43c7-bb7f-63a918ec5b13)
+![image](https://github.com/user-attachments/assets/4a05c8c1-0b9b-4362-83a1-d9f14beb1a99)
 #### Example 3
-![image](https://github.com/user-attachments/assets/4f7b3668-8317-4049-9c53-abc762ae6c6b)
+![image](https://github.com/user-attachments/assets/b4f7337c-82ce-4272-b3fb-4a816602cc3a)
 
 ## User Interface
 When you are done with all of the above, your agent should be ready for deployment. 
 
 In the top bar you should have a "Publish agent" button.
-![image](https://github.com/user-attachments/assets/7bacc520-e292-42a6-abf7-5977586c9436)
+![image](https://github.com/user-attachments/assets/5e7b1dd7-b02b-4fa5-af49-2598f34ab25d)
 
 From there, the needed HTML is created and displayed to you - ready to copy into whatever HTML-based interface you have.
-![image](https://github.com/user-attachments/assets/822045bf-17b1-4b88-93c0-4a9b6450c020)
+![image](https://github.com/user-attachments/assets/3167e309-06f6-4bf7-b019-545365cf7ce1)
 
 This is from my example:
-![image](https://github.com/user-attachments/assets/1c126382-5c19-4192-9673-fc8863a8027f)
+![image](https://github.com/user-attachments/assets/93405626-b5d7-455a-8c6c-dc2d941ede86)
 
 ## Technologies
 This project was built using the following technologies:
