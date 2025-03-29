@@ -1,0 +1,75 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Process Query API
+  description: API to process a user's question by generating and executing a BigQuery SQL query, and return the results.
+servers:
+  - url: https://your-cloud-run-url.a.run.app
+paths:
+  /process_query:
+    post:
+      operationId: process_query
+      summary: Process a user's question
+      description: Generates and executes a BigQuery SQL query based on the user's question and returns the results.
+      security:
+        - idTokenAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessQueryRequest'
+      responses:
+        '200':
+          description: Successful response containing query results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessQueryResponse'
+        '400':
+          description: Bad request due to invalid input.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    idTokenAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ProcessQueryRequest:
+      type: object
+      properties:
+        question:
+          type: string
+          description: The user's question to be processed.
+      required:
+        - question
+    ProcessQueryResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: A list of results, each containing an answer to the user's question.
+          items:
+            type: object
+            properties:
+              answer:
+                type: string
+                description: The answer to the user's question, to be returned unedited.
+            required:
+              - answer
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message detailing what went wrong.

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex AI to BigQuery - Proof of Concept</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Dialogflow Messenger CSS -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <!-- Custom Styles -->
+    <style>
+      body {
+        font-family: 'Google Sans', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        color: #202124;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+
+      main {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        margin: 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #1a73e8;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: #5f6368;
+        margin-top: 0;
+      }
+
+      .dataset-section {
+        margin-top: 2rem;
+        text-align: left;
+      }
+
+      .dataset-section h3 {
+        font-size: 1.25rem;
+        color: #1a73e8;
+        margin-bottom: 1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      table, th, td {
+        border: 1px solid #ddd;
+      }
+
+      th, td {
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f3f6fc;
+        color: #1a73e8;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Google Sans;
+        --df-messenger-chat-background: #f3f6fc;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #fff;
+        bottom: 16px;
+        right: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Vertex AI to BigQuery</h1>  
+      <h2>Proof of Concept</h2> 
+      <p>Demonstration of a simple chat integration between Vertex AI and BigQuery.</p>
+      <p>This integration makes it possible to chat with your BigQuery data.</p>
+
+      <!-- Dataset Description Section -->
+      <div class="dataset-section">
+        <h3>Dataset Schema</h3>
+        <p>The dataset used for this proof of concept is AI generated Google Ads performance data.<br> 
+        Below is the schema of the dataset:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field Name</th>
+              <th>Data Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Date</td>
+              <td>DATE</td>
+            </tr>
+            <tr>
+              <td>CampaignID</td>
+              <td>INTEGER</td>
+            </tr>
+            <tr>
+              <td>CampaignName</td>
+              <td>STRING</td>
+            </tr>
+            <tr>
+              <td>AdGroup</td>
+              <td>STRING</td>
+            </tr>
+            <tr>
+              <td>Impressions</td>
+              <td>INTEGER</td>
+            </tr>
+            <tr>
+              <td>Clicks</td>
+              <td>INTEGER</td>
+            </tr>
+            <tr>
+              <td>Conversions</td>
+              <td>INTEGER</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>INTEGER</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Dialogflow Messenger Script -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+    <!-- Dialogflow Messenger Widget -->
+    <df-messenger
+      location="europe-west3"
+      project-id="your_project_id"
+      agent-id="your_agent_id"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+        chat-title="Chat with your BQ data">
+      </df-messenger-chat-bubble>
+    </df-messenger>
+  </body>
+</html>
